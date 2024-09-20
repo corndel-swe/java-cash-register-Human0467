@@ -13,13 +13,16 @@ public class Level4 {
 
     // loop over each denomination
     for(Item item : drawer){
-      // do we have this denomination left? Do we still have a target?
+      // do we have this denomination left? Do we still have change to make up?
       while(item.getQuantity() > 0 && remaining > 0){
         // is the remaining amount larger than the current value?
         if(remaining - item.getValue() >= 0){
+          // reduce the remaining change needed
           remaining -= item.getValue();
+          // remove the used note/coin from the drawer
           item.setQuantity( item.getQuantity() - 1 );
         }else{
+          // if this note/coin is too big, go to the next one
           break;
         }
       }

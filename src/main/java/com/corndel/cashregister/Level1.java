@@ -9,8 +9,11 @@ public class Level1 {
    * E.g. ("penny", drawer) removes 1 penny from the given drawer.
    */
   public static List<Item> removeItem(String name, List<Item> drawer) {
+    // loop over each item in the drawer
       for (Item item : drawer) {
+        // is this the item we were looking for?
           if (item.name.equals(name)) {
+            // reduce quantity by 1
               item.setQuantity(item.getQuantity() - 1);
           }
       }

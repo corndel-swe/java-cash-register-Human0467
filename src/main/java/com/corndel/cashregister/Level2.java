@@ -17,10 +17,14 @@ public class Level2 {
    * N.b. $1 is a note, not a coin
    */
   public static int countCoins(List<Item> drawer) {
+    // which item names are coins?
     List<String> coinNames = Arrays.asList("quarter", "dime", "nickel", "penny");
 
     int sumCoins = 0;
+
+    // loop over each item in the drawer
     for(Item item : drawer){
+      // is this item a coin? if so add quantity
       if(coinNames.contains(item.getName())){
         sumCoins += item.getQuantity();
       }
@@ -36,6 +40,7 @@ public class Level2 {
 
     int sumNotes = 0;
     for(Item item : drawer){
+      // if NOT coin, must be a note
       if(!coinNames.contains(item.getName())){
         sumNotes += item.getQuantity();
       }

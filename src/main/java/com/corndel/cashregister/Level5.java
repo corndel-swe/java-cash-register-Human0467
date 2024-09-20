@@ -31,20 +31,17 @@ public class Level5 {
     // calculate required change
     int change = Level3.sumDrawer(paid) - cost;
 
-    // add money to drawer
+    // add money paid to the register drawer
     for(Item item : paid){
       for(int i = 0; i < item.getQuantity(); i++) {
         Level1.addItem(item.getName(), drawer);
       }
     }
 
-    // check we can make amount - also removes the items from the drawer!
+    // canMakeAmount returns true/false, but also updates the drawer that is passed in
+    // (possible issue if we can't make the change - the money is already removed)
     Level4.canMakeAmount(change, drawer);
 
-
-    // remove change from drawer
     return drawer;
-
-}
-
+  }
 }

@@ -10,6 +10,7 @@ public class Level3 {
   public static int sumDrawer(List<Item> drawer) {
     int totalInCents = 0;
 
+    // loop over every item in the drawer
     for(Item item : drawer){
       totalInCents += (item.getQuantity() * item.getValue());
     }
