@@ -32,7 +32,14 @@ public class Level2 {
    * Same as count coins but for *notes* instead
    */
   public static int countNotes(List<Item> drawer) {
-    // TODO
-    return 0;
+    List<String> coinNames = Arrays.asList("quarter", "dime", "nickel", "penny");
+
+    int sumNotes = 0;
+    for(Item item : drawer){
+      if(!coinNames.contains(item.getName())){
+        sumNotes += item.getQuantity();
+      }
+    }
+    return sumNotes;
   }
 }
