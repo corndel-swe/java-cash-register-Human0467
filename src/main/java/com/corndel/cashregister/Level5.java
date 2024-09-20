@@ -27,8 +27,24 @@ public class Level5 {
    * Level1.addItem(...) and so on.
    */
   public static List<Item> transaction(int cost, List<Item> paid, List<Item> drawer) {
-    // TODO
-    return null;
-  }
+
+    // calculate required change
+    int change = Level3.sumDrawer(paid) - cost;
+
+    // add money to drawer
+    for(Item item : paid){
+      for(int i = 0; i < item.getQuantity(); i++) {
+        Level1.addItem(item.getName(), drawer);
+      }
+    }
+
+    // check we can make amount - also removes the items from the drawer!
+    Level4.canMakeAmount(change, drawer);
+
+
+    // remove change from drawer
+    return drawer;
+
+}
 
 }
