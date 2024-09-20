@@ -9,6 +9,7 @@ public class Exercise1b {
    */
   public static RecipeBook renameBook(RecipeBook recipeBook, String newName) {
     // TODO
-    return null;
+    recipeBook.setTitle(newName);
+    return recipeBook;
   }
 }

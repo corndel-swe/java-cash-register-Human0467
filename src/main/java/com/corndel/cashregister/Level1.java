@@ -9,16 +9,29 @@ public class Level1 {
    * E.g. ("penny", drawer) removes 1 penny from the given drawer.
    */
   public static List<Item> removeItem(String name, List<Item> drawer) {
-    // TODO
-    return null;
+    // loop over each item in the drawer
+      for (Item item : drawer) {
+        // is this the item we were looking for?
+          if (item.name.equals(name)) {
+            // reduce quantity by 1
+              item.setQuantity(item.getQuantity() - 1);
+          }
+      }
+
+    return drawer;
   }
 
   /**
    * The same as removeItem but adds an item of currency instead
    */
   public static List<Item> addItem(String name, List<Item> drawer) {
-    // TODO
-    return null;
+    for (Item item : drawer) {
+      if (item.name.equals(name)) {
+        item.setQuantity(item.getQuantity() + 1);
+      }
+    }
+
+    return drawer;
   }
 
   /**
@@ -26,7 +39,7 @@ public class Level1 {
    * You can add methods like this to the other challenges for debugging.
    */
   public static void main(String[] args) {
-    removeItem("penny", Drawer.drawer);
+    //removeItem("penny", Drawer.drawer);
 
     for (var item : Drawer.drawer) {
       var summary = String.format("%s: %d", item.getName(), item.getQuantity());

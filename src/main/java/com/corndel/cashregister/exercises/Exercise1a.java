@@ -17,7 +17,12 @@ public class Exercise1a {
    * both work, and which you use is up to your preference.
    */
   public static String getSummary(Recipe recipe) {
-    // TODO
-    return null;
+    StringBuilder string = new StringBuilder();
+    string.append(recipe.getName()).append(" has ")
+            .append(recipe.getIngredients().size())
+            .append(" ingredients and serves ")
+            .append(recipe.getServings())
+            .append(" people");
+    return string.toString();
   }
 }
