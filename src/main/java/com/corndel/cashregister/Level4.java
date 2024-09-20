@@ -9,7 +9,21 @@ public class Level4 {
    * the drawer. Returns false if it is not possible.
    */
   public static boolean canMakeAmount(int target, List<Item> drawer) {
-    // TODO
-    return false;
+    int remaining = target;
+
+    // loop over each denomination
+    for(Item item : drawer){
+      // do we have this denomination left? Do we still have a target?
+      while(item.getQuantity() > 0 && remaining > 0){
+        // is the remaining amount larger than the current value?
+        if(remaining - item.getValue() >= 0){
+          remaining -= item.getValue();
+          item.setQuantity( item.getQuantity() - 1 );
+        }else{
+          break;
+        }
+      }
+    }
+    return remaining == 0;
   }
 }
