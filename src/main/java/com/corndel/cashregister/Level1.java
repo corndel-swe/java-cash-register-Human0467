@@ -22,8 +22,13 @@ public class Level1 {
    * The same as removeItem but adds an item of currency instead
    */
   public static List<Item> addItem(String name, List<Item> drawer) {
-    // TODO
-    return null;
+    for (Item item : drawer) {
+      if (item.name.equals(name)) {
+        item.setQuantity(item.getQuantity() + 1);
+      }
+    }
+
+    return drawer;
   }
 
   /**
