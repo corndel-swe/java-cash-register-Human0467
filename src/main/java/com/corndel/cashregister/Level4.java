@@ -27,6 +27,10 @@ public class Level4 {
         }
       }
     }
+    // if we have reduced the remaining change needed to 0 return true, otherwise false
     return remaining == 0;
+
+    // ** issue as even if returning false, we have already altered the drawer. Should
+    // change to work with a clone of drawer instead of the actual object?
   }
 }

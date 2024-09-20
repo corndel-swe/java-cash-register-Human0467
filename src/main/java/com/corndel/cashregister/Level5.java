@@ -38,8 +38,10 @@ public class Level5 {
       }
     }
 
-    // canMakeAmount returns true/false, but also updates the drawer that is passed in
-    // (possible issue if we can't make the change - the money is already removed)
+    /*
+    * canMakeAmount returns true/false, but also updates the drawer that is passed in
+    * (possible issue if we can't make the change - the money is already removed
+     */
     Level4.canMakeAmount(change, drawer);
 
     return drawer;
